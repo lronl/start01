@@ -1,4 +1,4 @@
-#1
+#1 Создать список из N элементов (от 0 до n с шагом 1). В этом списке вывести все четные значения.
 lis = [i for i in range(50)]
 num = 1
 out = [] 
@@ -8,7 +8,7 @@ while(num < len(lis)):
 	num += 1
 print(out) 
 
-#2
+#2 Создать словарь, Страна:Столица. 
 Capitals = dict()
 Capitals['Russia'] = 'Moscow'
 Capitals['Ukraine'] = 'Kiev'
@@ -20,7 +20,7 @@ for country in Countries:
     else:
         print('В базе нет страны c названием ' + country)
 
-#3
+#3 Программа которая считает до 100 и делает замену некоторых чисел на слова.
 for x in range(1, 100):
     s = '';
     if x % 3 == 0:
@@ -31,7 +31,7 @@ for x in range(1, 100):
         s = x
     print(s, end=' ')
 	
-#4
+#4 Функция bank
 amount = input("Сумма депозита: ")
 amount = int(amount)
 pct = input("Процент: ")
