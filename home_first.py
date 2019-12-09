@@ -1,6 +1,12 @@
 #1
-a = [i for i in range(50)]
-print filter(lambda x: (x + 1) % 2, a)
+lis = [i for i in range(50)]
+num = 1
+out = [] 
+while(num < len(lis)): 
+	if lis[num] % 2 == 0: 
+		out.append(lis[num]) 
+	num += 1
+print(out) 
 
 #2
 Capitals = dict()
