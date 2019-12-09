@@ -1,6 +1,8 @@
+#1
 a = [i for i in range(50)]
 print filter(lambda x: (x + 1) % 2, a)
 
+#2
 Capitals = dict()
 Capitals['Russia'] = 'Moscow'
 Capitals['Ukraine'] = 'Kiev'
@@ -12,7 +14,7 @@ for country in Countries:
     else:
         print('В базе нет страны c названием ' + country)
 
-
+#3
 for x in range(1, 100):
     s = '';
     if x % 3 == 0:
@@ -23,7 +25,7 @@ for x in range(1, 100):
         s = x
     print(s, end=' ')
 	
-
+#4
 amount = input("Сумма депозита: ")
 amount = int(amount)
 pct = input("Процент: ")
