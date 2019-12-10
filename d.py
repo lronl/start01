@@ -2,22 +2,21 @@
 # классы легкового автомобиля и грузового. Описать в основном
 # классе базовые аттрибуты для автомобилей. Будет плюсом если в
 # классах наследниках переопределите методы базового класса.
-class Person:
-    name = "Ivan"
-    age = 10
+class Car:
+    vehicle = 'car'
 
-    def set(self, name, age):
-        self.name = name
-        self.age = age
+    def __init__(self, num_of_doors, num_of_wheels, brand, max_weight, color):
+        self.num_of_doors = num_of_doors
+        self.num_of_whells = num_of_wheels
+        self.brand = brand
+        self.max_weight = max_weight
+        self.color = color
 
+CarPassenger = Car(4, 4, "Lada", 300, "Black")
+Truck = Car(2, 6, "Niva", 700, "Black")
 
-vlad = Person()
-vlad.set("Влад", 25)
-print(vlad.name + " " + str(vlad.age))
-
-ivan = Person()
-ivan.set("Иван", 56)
-print(ivan.age)
+print('Passenger:', 'It is a', CarPassenger.vehicle + ',', 'the car has', CarPassenger.num_of_doors, 'doors,', CarPassenger.num_of_whells, 'whells,', 'it is a', CarPassenger.brand, 'her maximum lifting weight', CarPassenger.max_weight, 'and the color is', CarPassenger.color)
+print('Truck:', 'It is a', Truck.vehicle + ',', 'the car has', Truck.num_of_doors, 'doors,', Truck.num_of_whells, 'whells,', 'it is a', Truck.brand, 'her maximum lifting weight', Truck.max_weight, 'and the color is', Truck.color)
 
 # 2) Создать класс магазина. Конструктор должен инициализировать
 # значения: «Название магазина» и «Количество проданных
