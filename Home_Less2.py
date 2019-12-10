@@ -35,8 +35,8 @@ class Shop:
         self.quantity = int(quantity)
         print("Store ready")
 
-my_shop = Shop('Auchan', 2)
-my_sold = Shop(1, 0)
+my_shop = Shop('Auchan', 0)
+my_sold = Shop(0, 0)
 
 i = 0
 while i < 10:
