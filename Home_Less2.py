@@ -25,8 +25,26 @@ print('Truck:', 'It is a', Truck.vehicle + ',', 'the car has', Truck.num_of_door
 # переменной класса, которая будет хранить общее количество
 # товаров проданных всеми магазинами.
 
-class Magazin:
-    def __init__(self, magazinName: str, goodsSellQty: int):
+import time
+class Shop:
+    quantity: int
+    store = 'shop'
+
+    def __init__(self, name, quantity):
+        self.name = name
+        self.quantity = int(quantity)
+        print("Store ready")
+
+my_shop = Shop('Auchan', 2)
+my_sold = Shop(1, 0)
+
+i = 0
+while i < 10:
+    print('Auchan Sell:', i, 'Goods')
+    i = i + 1
+    time.sleep(0.4)
+
+print(my_shop.name, 'Total Sell :', my_sold.quantity + i)
 
 # Создать класс точки, реализовать конструктор который
 # инициализирует 3 координаты (Class): Определенный программистом тип данных.x, y, z). Реалзиовать методы для ). Реалзиовать методы для
