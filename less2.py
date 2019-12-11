@@ -1,6 +1,6 @@
 class Vehicle:
 
-#    Vehicle_type = 'Car'
+    Vehicle_type = 'Car'
 
     def __init__(self, num_of_doors, num_of_wheels, brand):
         self._num_of_doors = num_of_doors
@@ -44,7 +44,7 @@ class Car(Vehicle):
     def __str__(self):
         return self._brand
 
-#car = Vehicle(4, 4, 'BMW')
+car = Vehicle(4, 4, 'BMW')
 #car.move()
 #print(car.num_of_whells)
 #print(car.num_of_doors)

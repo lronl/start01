@@ -1,0 +1,64 @@
+# #Curying example
+#
+# def a(a_arg):
+#     print(a_arg)
+#
+#     def b(b_arg):
+#         print(b_arg)
+#
+#         def c(c_arg):
+#             print('The end of function tree')
+#
+#         return c
+#
+#     return b
+#
+# # a(10)(20)(30)(40)
+# b1 = a(10)
+# c2 = b1(20)
+# d1 = c2(10)
+# print(a(10)(20)(30))
+
+#декоратор
+#---------------------------------------------------------------------------------------
+def random_generator(range_start, range_end):
+    import random
+    return (random.randint(range_start, range_end))
+
+# def func1(func):
+#     print('Hello i am func1')
+#     print('Function started')
+#     func()
+#     print('Function ended')
+#
+# a = func1(random_generator)
+#---------------------------------------------------------------------------------------
+
+def decorator(func):
+
+    def wrapper(range_start, range_end):
+        # print('Start wrapping')
+        result = []
+        for iteration_num, _ in enumerate(range(10)):
+            number = func(range_start, range_end)
+            result.append(number)
+        # result = func(range_start, range_end)
+        # print(f'Wrapped result is {result}')
+        # print('End wrapping')
+
+        return result
+
+    return wrapper
+
+# result = decorator(random_generator)(100, 200)
+# print(result)
+@decorator
+def random_generator(range_start, range_end):
+    import random
+    return random.randint(range_start, range_end)
+
+result = random_generator(100, 200)
+print(result)
+
+result = decorator(random_generator(100, 200))
+print(result)

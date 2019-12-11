@@ -15,5 +15,5 @@ def square_root(number):
     return number ** 2
 
 
-a = map(lambda number: number ** 2, range(100))
+a = map(lambda number: number + 1, range(5))
 print(list(a))
