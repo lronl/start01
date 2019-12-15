@@ -5,7 +5,6 @@ class ComplexMy:
     def __init__(self, x, y):
         self.x = complex(x, y)
         self.y = complex(x, y)
-        print('Working...')
 
     def __add__(self, other):
         return (self.x + other.x)
