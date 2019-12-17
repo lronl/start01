@@ -68,30 +68,48 @@ print('\nВ', obj1.name, 'и', obj2.name, 'были продажи!'), Shop.howM
 class Point:
 
     def __init__(self, x, y, z):
-        self.x = x
-        self.y = y
-        self.z = z
+        self._x = x
+        self._y = y
+        self._z = z
         print('Working...')
 
+    def set_x(self, new_x):
+        self._x = new_x
+
+    def get_x(self):
+        return self._x
+
+    def set_y(self, new_y):
+        self._y = new_y
+
+    def get_y(self):
+        return self._y
+
+    def set_z(self, new_z):
+        self._z = new_z
+
+    def get_z(self):
+        return self._z
+
     def __add__(self, other):
-        return (self.x + other.x,
-                self.y + other.y,
-                self.z + other.z)
+        return (self.get_x() + other.get_x(),
+                self.get_y() + other.get_y(),
+                self.get_z() + other.get_z())
 
     def __truediv__(self, other):
-        return (self.x / other.x,
-                self.y / other.y,
-                self.z / other.z)
+        return (self.get_x() / other.get_x(),
+                self.get_y() / other.get_y(),
+                self.get_z() / other.get_z())
 
     def __mul__(self, other):
-        return (self.x * other.x,
-                self.y * other.y,
-                self.z * other.z)
+        return (self.get_x() * other.get_x(),
+                self.get_y() * other.get_y(),
+                self.get_z() * other.get_z())
 
     def __sub__(self, other):
-        return (self.x - other.x,
-                self.y - other.y,
-                self.z - other.z)
+        return (self.get_x() - other.get_x(),
+                self.get_y() - other.get_y(),
+                self.get_z() - other.get_z())
 
 
 my_fun = Point(1, 2, 3)
