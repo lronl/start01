@@ -1,3 +1,23 @@
+# 1) Создать класс автомобиля. Описать общие аттрибуты. Создать
+# классы легкового автомобиля и грузового. Описать в основном
+# классе базовые аттрибуты для автомобилей. Будет плюсом если в
+# классах наследниках переопределите методы базового класса.
+class Car:
+    vehicle = 'car'
+
+    def __init__(self, num_of_doors, num_of_wheels, brand, max_weight, color):
+        self.num_of_doors = num_of_doors
+        self.num_of_whells = num_of_wheels
+        self.brand = brand
+        self.max_weight = max_weight
+        self.color = color
+
+CarPassenger = Car(4, 4, "Lada", 300, "Black")
+Truck = Car(2, 6, "Niva", 700, "Black")
+
+print('Passenger:', 'It is a', CarPassenger.vehicle + ',', 'the car has', CarPassenger.num_of_doors, 'doors,', CarPassenger.num_of_whells, 'whells,', 'it is a', CarPassenger.brand, 'her maximum lifting weight', CarPassenger.max_weight, 'and the color is', CarPassenger.color)
+print('Truck:', 'It is a', Truck.vehicle + ',', 'the car has', Truck.num_of_doors, 'doors,', Truck.num_of_whells, 'whells,', 'it is a', Truck.brand, 'her maximum lifting weight', Truck.max_weight, 'and the color is', Truck.color)
+
 # 2) Создать класс магазина. Конструктор должен инициализировать
 # значения: «Название магазина» и «Количество проданных
 # товаров». Реализовать методы объекта, которые будут увеличивать
@@ -36,3 +56,48 @@ obj2.Store_sold()
 Shop.howMany()
 
 print('\nВ', obj1.name, 'и', obj2.name, 'были продажи!'), Shop.howMany()
+
+# Создать класс точки, реализовать конструктор который
+# инициализирует 3 координаты (Class): Определенный программистом тип данных.x, y, z). Реалзиовать методы для ). Реалзиовать методы для
+# получения и изменения каждой из координат. Перегрузить для этого
+# класса методы сложения, вычитания, деления умножения.
+# Перегрузить один любой унарный метод.
+# Ожидаемый результат: умножаю точку с координатами 1,2,3 на
+# другую точку с такими же координатами, получаю результат 1, 4, 9.
+
+class Point:
+
+    def __init__(self, x, y, z):
+        self.x = x
+        self.y = y
+        self.z = z
+        print('Working...')
+
+    def __add__(self, other):
+        return (self.x + other.x,
+                self.y + other.y,
+                self.z + other.z)
+
+    def __truediv__(self, other):
+        return (self.x / other.x,
+                self.y / other.y,
+                self.z / other.z)
+
+    def __mul__(self, other):
+        return (self.x * other.x,
+                self.y * other.y,
+                self.z * other.z)
+
+    def __sub__(self, other):
+        return (self.x - other.x,
+                self.y - other.y,
+                self.z - other.z)
+
+
+my_fun = Point(1, 2, 3)
+my_fun2 = Point(1, 2, 3)
+
+print(my_fun + my_fun2)
+print(my_fun * my_fun2)
+print(my_fun - my_fun2)
+print(my_fun / my_fun2)
