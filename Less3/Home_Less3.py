@@ -4,30 +4,27 @@
 
 from datetime import datetime
 
+
+class date_time:
+
+    total_range = 0
+
+
 def timeit(func):
-    def wrapper(*args, **kwargs):
+    def res(arg1, arg2):
         start = datetime.now()
-        result = func(*args, **kwargs)
+        for i in range(arg1, arg2):
+            print(i)
+            date_time.total_range += 1
+        func(arg1, arg2)
         print(datetime.now() - start)
-        return result
-    return wrapper
+    return res
+
 
 @timeit
-def cycle_for(n):
-    l = []
-    for i in range(n):
-        if i % 2 == 0:
-            l.append(i)
-    return l
+def res_call(start, end):
+    print("Диапазоп от:", start, end)
 
-@timeit
-def generator_my(n):
-    l = [x for x in range(n) if x % 2 == 0]
-    return l
-
-l1 = cycle_for(10)
-l2 = generator_my(10)
-
-print(type(l1), cycle_for.__name__, l1)
-print(type(l2), generator_my.__name__, l2)
+res_call(1, 100)
+print(date_time.total_range)
 
